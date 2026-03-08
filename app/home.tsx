@@ -1,6 +1,5 @@
 "use client";
 
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
@@ -12,7 +11,6 @@ import ProjectCard from '@/components/ProjectCard';
 import { Project } from './projects/page';
 import { useState } from 'react';
 import Modal from '@/components/Modal';
-import SkillBars from '@/components/SkillBars';
 
 export default function HomePage() {
   const [active,  setActive]  = useState<Project | null>(null);
@@ -234,7 +232,7 @@ export default function HomePage() {
             {[
               { v: '2023–25', l: 'ISTA Ambositra' },
               { v: 'API REST', l: 'Expertise' },
-              { v: '3×', l: 'Déployé en prod' },
+              { v: PROJECTS.filter(p => p.status === 'deployed').length, l: 'Déployé en prod' },
               { v: 'FR · EN', l: '+ Malagasy natif' },
             ].map(s => (
               <Reveal key={s.l}>
