@@ -1,5 +1,3 @@
-// lib/data.ts — Single source of truth for portfolio content
-
 export const PERSON = {
   name:       'ANDRIANAIVO Noé',
   nameShort:  'Andry',
@@ -8,25 +6,26 @@ export const PERSON = {
   phone:      ['+261 34 41 805 07', '+261 33 14 568 86'],
   location:   'Ankilahila Fandriana, Madagascar',
   github:     'https://github.com/Andry-GitCrs',
-  linkedin:   '', // REVIEW: ajouter l'URL LinkedIn
-  twitter:    '', // REVIEW: ajouter l'URL Twitter/X
-  bio:        "Étudiant en 2ᵉ année de Génie Logiciel à l'ISTA Ambositra, je suis un développeur web fullstack polyvalent et motivé. Mes projets m'ont donné une expertise concrète en APIs REST. Je cherche un stage pour mettre en pratique mes compétences au sein d'une équipe professionnelle.",
+  linkedin:   'www.linkedin.com/in/andry-and-377354325',
+  twitter:    '',
+  facebook:   'https://www.facebook.com/Andry2.1.0',
+  bio:        "Étudiant en 2ᵉ année de Génie Logiciel à l'Université d'Amorin'i Mania, je suis un développeur web fullstack polyvalent et motivé. Mes projets m'ont donné une expertise concrète en APIs REST.",
   available:  true,
   cvPath:     '/resume.pdf',
 };
 
 export const TAGLINES = [
   'Développeur Full-Stack',
-  'Expert APIs REST',
-  'NestJS · Flask · Next.js',
-  'Open to Work 🌍',
+  'Experience en APIs REST',
+  'JavaWeb · NestJS · Next.js · Vue.js · Symfony · Flask',
+  'Open to Work',
 ];
 
 export const STATS = [
-  { value: '6+', label: 'Projets' },
-  { value: '8+', label: 'Langages' },
+  { value: '+6', label: 'Projets' },
+  { value: '+10', label: 'Langages' },
   { value: '2', label: 'Ans d\'étude' },
-  { value: '3', label: 'Déployés' },
+  { value: '+3', label: 'Déploiements' },
 ];
 
 export const PROJECTS = [
@@ -44,6 +43,7 @@ export const PROJECTS = [
       "Mise en place d'un système de chat et notifications en temps réel (Socket.io)",
       "Déploiement sur Vercel (Next.js), Render (Flask API) et Railway (BDD)",
     ],
+    images: [],
     tech:   ['Next.js', 'Flask API', 'Socket.io', 'JWT', 'Vercel'],
     link:   'https://tantsaha.vercel.app',
     github: '',
@@ -62,6 +62,7 @@ export const PROJECTS = [
       "Notifications temps réel avec Socket.io",
       "Déploiement sur Render (Flask) et Railway (BDD)",
     ],
+    images: [],
     tech:   ['Flask', 'JavaScript', 'PostgreSQL', 'Socket.io', '2FA'],
     link:   '',
     github: 'https://github.com/Andry-GitCrs/Task_Manager',
@@ -80,6 +81,7 @@ export const PROJECTS = [
       "Service d'envoi d'emails OTP pour validation",
       "Coordination équipe via Git, GitHub et Trello",
     ],
+    images: [],
     tech:   ['NestJS', 'TypeScript', 'PostgreSQL', 'JWT', 'Trello'],
     link:   '',
     github: '',
@@ -97,6 +99,7 @@ export const PROJECTS = [
       "Lecteur audio personnalisé avec contrôles playback",
       "Gestion de playlists dynamiques",
     ],
+    images: [],
     tech:   ['JavaScript', 'HTML', 'CSS', 'Web Audio API'],
     link:   '',   // REVIEW: ajouter lien
     github: '',   // REVIEW: ajouter lien GitHub
@@ -114,6 +117,7 @@ export const PROJECTS = [
       "Système de panier et processus de commande",
       "Interface admin de gestion des commandes",
     ],
+    images: [],
     tech:   ['PHP', 'JavaScript', 'HTML/CSS', 'MySQL'],
     link:   '',   // REVIEW: ajouter lien
     github: '',   // REVIEW: ajouter lien GitHub
@@ -131,6 +135,7 @@ export const PROJECTS = [
       "Génération automatique de la carte d'identité",
       "Export et impression des cartes",
     ],
+    images: [],
     tech:   ['PHP', 'HTML', 'CSS'],
     link:   '',   // REVIEW: ajouter lien
     github: '',   // REVIEW: ajouter lien GitHub
@@ -173,7 +178,7 @@ export const SKILLS = {
     { name: 'Bash',       icon: '🐚', level: 'Bases' },
     { name: 'SQL',        icon: '🗃️',  level: 'Avancé' },
   ],
-  tools: ['PM2', 'Docker', 'Git', 'pgAdmin 4', 'Sequelize', 'WAMP', 'VirtualBox', 'Trello', 'LucidChart', 'Figma (bases)', 'Canva', 'UFW', 'Certbot'],
+  tools: ['PM2', 'Docker', 'Git', 'pgAdmin 4', 'Sequelize', 'WAMP', 'VirtualBox', 'Trello', 'LucidChart', 'Figma (bases)', 'Canva', 'UFW', 'Certbot', 'NameCheap'],
 };
 
 export const EXPERIENCE = [
@@ -181,23 +186,45 @@ export const EXPERIENCE = [
     title:   'Développeur Backend',
     project: 'Realworld',
     type:    'Équipe · En cours',
-    period:  '2024 — présent', // REVIEW: préciser les dates
+    period:  '2025 — présent',
     wip:     true,
     summary: "API REST de gestion de stock pour entreprise privée avec NestJS.",
     tasks: [
-      "Création et gestion des opérations CRUD",
+      "Domain Driven Design",
+      "Création d'une Api REST",
+      "Implementation de la logique de gestion de stock",
       "Système d'authentification JWT",
       "Service d'envoi d'emails OTP",
       "Collaboration via Git, GitHub et Trello",
+      "Déploiement sur un VPS",
     ],
-    tech: ['NestJS', 'TypeScript', 'PostgreSQL', 'Git'],
+    tech: ['NestJS', 'Next.js', 'PostgreSQL', 'Git & GitHub', 'CI/CD avec GitHub Actions', 'Trello'],
     link: '',
+  },
+  {
+    title:   'Développeur Full-Stack',
+    project: 'My Roadmap',
+    type:    'Individuel',
+    period:  '2026',
+    wip:     false,
+    summary: "Plateforme de conception de parcours personnels ou professionnels sur plusieurs domaines, en temps réel et avec suivi de progression (Rappel Whatsapp). Avec un système de planification et gestion de tâches. Partage de resources et collaboration.",
+    tasks: [
+      "UI & UX intuitive et moderne",
+      "Système creation de parcours",
+      "Système d'authentification JWT",
+      "Système de planification et gestion de tâches",
+      "Notifications en temps réel et configurable via Whatsapp",
+      "Service d'envoi d'emails OTP",
+      "Déploiement sur VPS",
+    ],
+    tech: ['Next.js', 'Sqlite', 'PostgreSQL', 'Git&GitHub', 'CI/CD avec Git Actions'],
+    link: 'https://roadmap.andry.ink',
   },
   {
     title:   'Développeur Frontend',
     project: 'Tantsaha',
     type:    'Équipe',
-    period:  '2024', // REVIEW: préciser les dates
+    period:  '2025',
     wip:     false,
     summary: "Plateforme agricole malgache — vente, achat et partage de connaissances.",
     tasks: [
@@ -206,23 +233,23 @@ export const EXPERIENCE = [
       "Chat et notifications en temps réel (Socket.io)",
       "Déploiement Vercel + Render + Railway",
     ],
-    tech: ['Next.js', 'Flask API', 'Socket.io'],
+    tech: ['Next.js', 'Flask API', 'PostgreSQL', 'Socket.io', 'Git&GitHub'],
     link: 'https://tantsaha.vercel.app',
   },
   {
     title:   'Développeur Full-Stack',
     project: 'Stack Task',
     type:    'Individuel',
-    period:  '2024', // REVIEW: préciser les dates
+    period:  '2025',
     wip:     false,
     summary: "Application de gestion de tâches multi-utilisateurs.",
     tasks: [
       "Espace admin avec 2FA personnalisée",
-      "Service OTP email via Abstract API",
+      "Service OTP email et verification via Abstract API",
       "Notifications temps réel Socket.io",
       "Déploiement Render + Railway",
     ],
-    tech: ['Flask', 'JavaScript', 'PostgreSQL'],
+    tech: ['HTML&CSS', 'JavaScript', 'Flask API', 'PostgreSQL'],
     link: 'https://github.com/Andry-GitCrs/Task_Manager',
   },
 ];
@@ -230,15 +257,15 @@ export const EXPERIENCE = [
 export const EDUCATION = [
   {
     degree:  'Génie Logiciel — 2ᵉ année',
-    school:  'Université IST Ambositra Annexe Fandriana',
+    school:  'Université d\'Amorin\'i Mania',
     period:  '2023 — 2025',
     detail:  'Ankilahila Fandriana 308, Madagascar',
   },
   {
     degree:  'Baccalauréat série D',
-    school:  'Lycée Privé Adventiste Julien Ramamonjisoa',
+    school:  'Lycée Privé Adventiste Julien Ramamonjisoa Sambaina',
     period:  '2022 — 2023',
-    detail:  '',
+    detail:  'Residé à l\'Université Adventiste Zurcher (UAZ) Sambaina',
   },
 ];
 
