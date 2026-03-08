@@ -3,7 +3,7 @@ name: Deploy to VPS
 on:
   push:
     branches: [main]
-  workflow_dispatch: # déclenchement manuel depuis GitHub
+  workflow_dispatch:
 
 concurrency:
   group: deploy-production
@@ -25,13 +25,17 @@ jobs:
           node-version: '20'
           cache: 'pnpm'
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Install dependencies
         run: pnpm ci --omit=dev
 
       - name: Build Next.js
         run: pnpm run build
         env:
-          # Variables nécessaires au build (non-secrètes)
           NEXT_PUBLIC_SITE_URL: https://andry.ink
 
       - name: Deploy to VPS
@@ -47,24 +51,12 @@ jobs:
 
             cd /home/andry/perso/portfolio
 
-            # Récupérer les dernières modifications
             git pull origin main
 
-            # Installer les dépendances si package.json a changé
             pnpm ci --omit=dev
 
-            # Reconstruire l'application
             NEXT_PUBLIC_SITE_URL=https://andry.ink pnpm run build
 
-            # Redémarrer via PM2 (zero-downtime reload)
             pm2 reload andry-portfolio --update-env
 
             echo "✓ Déploiement terminé"
-
-      - name: Notify success
-        if: success()
-        run: echo " andry.ink déployé avec succès — $(date)"
-
-      - name: Notify failure
-        if: failure()
-        run: echo "❌ Échec du déploiement — vérifier les logs"
