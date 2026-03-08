@@ -1,62 +1,39 @@
-name: Deploy to VPS
+name: Deploy andry-portfolio
 
 on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
-concurrency:
-  group: deploy-production
-  cancel-in-progress: true
+push:
+branches: ["main"]
+workflow_dispatch:
 
 jobs:
-  deploy:
-    name: Build & Deploy
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
+deploy:
+runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+steps:
+  - name: Deploy via SSH
+    uses: appleboy/ssh-action@v1.0.3
+    with:
+      host: ${{ secrets.VPS_HOST }}
+      username: ${{ secrets.VPS_USER }}
+      key: ${{ secrets.VPS_SSH_KEY }}
+      port: ${{ secrets.VPS_PORT || 22 }}
+      script: |
+        echo "── Deploying andry-portfolio ──"
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'pnpm'
+        cd /home/andry/perso/portfolio
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
+        # Récupérer la dernière version
+        git fetch origin
+        git reset --hard origin/main
 
-      - name: Install dependencies
-        run: pnpm ci --omit=dev
+        # Installer les dépendances
+        pnpm install --frozen-lockfile
 
-      - name: Build Next.js
-        run: pnpm run build
-        env:
-          NEXT_PUBLIC_SITE_URL: https://andry.ink
+        # Build Next.js
+        NEXT_PUBLIC_SITE_URL=https://andry.ink pnpm run build
 
-      - name: Deploy to VPS
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host:       ${{ secrets.VPS_HOST }}
-          username:   ${{ secrets.VPS_USER }}
-          key:        ${{ secrets.VPS_SSH_KEY }}
-          port:       ${{ secrets.VPS_PORT || 22 }}
-          script: |
-            set -e
-            echo "── Déploiement andry.ink ──"
+        # Reload PM2 (zero downtime)
+        pm2 reload andry-portfolio --update-env
 
-            cd /home/andry/perso/portfolio
-
-            git pull origin main
-
-            pnpm ci --omit=dev
-
-            NEXT_PUBLIC_SITE_URL=https://andry.ink pnpm run build
-
-            pm2 reload andry-portfolio --update-env
-
-            echo "✓ Déploiement terminé"
+        echo "✓ andry-portfolio deployed successfully"
+```
