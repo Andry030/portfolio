@@ -1,3 +1,5 @@
+import { Project } from "@/app/projects/page";
+
 export const PERSON = {
   name:       'ANDRIANAIVO Noé',
   nameShort:  'Andry',
@@ -5,7 +7,7 @@ export const PERSON = {
   email:      'andrianaivonoe403@gmail.com',
   phone:      ['+261 34 41 805 07', '+261 33 14 568 86'],
   location:   'Ankilahila Fandriana, Madagascar',
-  github:     'https://github.com/Andry-GitCrs',
+  github:     'https://github.com/Andry030',
   linkedin:   'www.linkedin.com/in/andry-and-377354325',
   twitter:    '',
   facebook:   'https://www.facebook.com/Andry2.1.0',
@@ -17,18 +19,134 @@ export const PERSON = {
 export const TAGLINES = [
   'Développeur Full-Stack',
   'Experience en APIs REST',
-  'JavaWeb · NestJS · Next.js · Vue.js · Symfony · Flask',
+  'NestJS',
+  'Symfony',
+  'Django',
+  'FastAPI',
+  'Next.js',
+  'Vue.js',
+  'HTML&CSS',
+  'JavaWeb',
+  'Flask',
   'Open to Work',
 ];
 
-export const STATS = [
-  { value: '+6', label: 'Projets' },
-  { value: '+10', label: 'Langages' },
-  { value: '2', label: 'Ans d\'étude' },
-  { value: '+3', label: 'Déploiements' },
-];
-
-export const PROJECTS = [
+export const PROJECTS: Project[] = [
+  {
+    id:       'my-roadmap',
+    name:     'My Roadmap',
+    role:     'Dev Full-Stack',
+    type:     'Individuel',
+    status:   'wip',
+    emoji:    '🗺️',
+    summary:  "Plateforme de conception de parcours personnels ou professionnels avec suivi de progression, planification de tâches et notifications Whatsapp en temps réel.",
+    details: [
+      "Système de création et gestion de parcours multi-domaines",
+      "Système d'authentification JWT",
+      "Planification et gestion de tâches imbriquées intégrées",
+      "Notifications configurables en temps réel via Whatsapp",
+      "Service d'envoi d'emails OTP",
+      "Déploiement sur VPS avec CI/CD",
+      "Style shadcn/ui",
+    ],
+    images: [],
+    tech:   ['Next.js', 'Tailwind', 'SQLite', 'PostgreSQL', 'JWT', 'CI/CD', 'WAHA', 'VPS'],
+    link:   'https://roadmap.andry.ink',
+    github: '',
+  },
+  {
+    id:       'realworld',
+    name:     'Cavamad',
+    role:     'Dev Full-Stack',
+    type:     'Équipe',
+    status:   'wip',
+    emoji:    '🏭',
+    summary:  "Application de gestion de stock complete pour entreprise privée. Architecture Clean et sécurité avancée.",
+    details: [
+      "Création et gestion des opérations CRUD",
+      "Gestion des droits d'accès",
+      "Créaction de l'interface d'administration",
+      "Service d'envoi d'emails OTP pour validation",
+      "Coordination équipe via Git, GitHub et Trello",
+    ],
+    images: [],
+    tech:   ['NestJS', 'Next.js', 'Tailwind', 'PostgreSQL', 'JWT', 'Trello', 'CI/CD', 'VPS'],
+    link:   '',
+    github: '',
+  },
+  {
+    id:       'gender-detection-voice-chat-gemini',
+    name:     'Detection de sexe',
+    role:     'Développeur Logiciel',
+    type:     'Individuel',
+    status:   'deployed',
+    emoji:    '🌱',
+    summary:  "Une petite logiciel de detection de sexe et de discussion en temps réel avec Gemini.(Open-Source)",
+    details: [
+      "Utilisation de YOLOv8 pour la detection de sexe",
+      "Utilisation de text-to-speech pour la discussion avec Gemini",
+    ],
+    images: [],
+    tech:   ['Python', 'Python Tkinter', 'Gemini API', 'YoloV8', 'text-to-speech'],
+    link:   'https://github.com/Andry-GitCrs/GenderDetection.git',
+    github: 'https://github.com/Andry-GitCrs/GenderDetection.git',
+  },
+  {
+    id:       'xpens',
+    name:     'Xpens (Open-Source)',
+    role:     'Dev web & mobile',
+    type:     'Individuel',
+    status:   'open-source',
+    emoji:    '✅',
+    summary:  "Une plateforme de gestion et suivie de budget personnelle ou professionnelle. Vente, achat, facturation.",
+    details: [
+      "L'application est disponible sur iOS et Android",
+      "La version web peut etre installé sur votre ordinateur et marche hors ligne",
+      "Création et gestion des opérations CRUD",
+      "Desing de l'interface sur Figma",
+    ],
+    images: [],
+    tech:   ['HTML&CSS', 'JavaScript', 'PHP Native', 'React Native', 'MySQL', 'Git&GitHub'],
+    link:   'https://github.com/Andry-GitCrs/Xpens.git',
+    github: 'https://github.com/Andry-GitCrs/Xpens.git',
+  },
+  {
+    id:       'recipe-gen',
+    name:     'Generateur de formule de provende',
+    role:     'Développeur Full-Stack',
+    type:     'Individuel',
+    status:   'wip',
+    emoji:    '🏭',
+    summary:  "Système de generation de formule de provende à l'aide du Programation Lineaire. Architecture Symfony et un solver Python .",
+    details: [
+      "Clean Architecture Symfony orienté DDD",
+      "Une solver de Programation Lineaire avec Python",
+      "Une interface d'administration",
+      "Service d'envoi d'emails OTP",
+    ],
+    images: [],
+    tech:   ['Symfony', "Python FastAPI", 'Vue.js', 'Tailwind', 'PostgreSQL', 'JWT', 'Trello', 'CI/CD', 'VPS'],
+    link:   '',
+    github: '',
+  },
+  {
+    id:       'classification-iris',
+    name:     'Iris Classifier',
+    role:     'Développeur Full-Stack',
+    type:     'Individuel',
+    status:   'deployed',
+    emoji:    '🌱',
+    summary:  "Création et entrainement d'un modèle de Classification d'iris avec l'algorithme de Decision Tree avec Python.",
+    details: [
+      "Création et entrainement d'un modèle de Classification d'iris avec l'algorithme de Decision Tree avec Python.",
+      "Création d'une interface utilisateur avec HTML, CSS et JavaScript",
+      "Déploiement sur Render",
+    ],
+    images: [],
+    tech:   ['HTML&CSS', 'JavaScript', 'Python Fast API'],
+    link:   'https://iris-fastapi-s2mi.onrender.com/',
+    github: 'https://github.com/Andry030/Iris-Flower-Classification-using-Decision-Tree-with-Python.git',
+  },
   {
     id:       'tantsaha',
     name:     'Tantsaha',
@@ -39,18 +157,19 @@ export const PROJECTS = [
     summary:  "Plateforme communautaire pour agriculteurs malgaches. Vente, achat et partage de connaissances avec chat temps réel.",
     details: [
       "Intégration de l'authentification avec JWT",
+      "Une serveur de stockage de fichiers fais maison",
       "Design et développement des fonctionnalités de publication de contenu varié (vente, formation, etc.)",
       "Mise en place d'un système de chat et notifications en temps réel (Socket.io)",
       "Déploiement sur Vercel (Next.js), Render (Flask API) et Railway (BDD)",
     ],
     images: [],
-    tech:   ['Next.js', 'Flask API', 'Socket.io', 'JWT', 'Vercel'],
+    tech:   ['Next.js', 'Flask API', 'PostgreSQL', 'Socket.io', 'JWT', 'Vercel', 'Render', 'Railway', 'Git&Github'],
     link:   'https://tantsaha.vercel.app',
     github: '',
   },
   {
     id:       'stack-task',
-    name:     'Stack Task',
+    name:     'Stack Task (Open-Source)',
     role:     'Développeur Full-Stack',
     type:     'Individuel',
     status:   'deployed',
@@ -63,142 +182,55 @@ export const PROJECTS = [
       "Déploiement sur Render (Flask) et Railway (BDD)",
     ],
     images: [],
-    tech:   ['Flask', 'JavaScript', 'PostgreSQL', 'Socket.io', '2FA'],
+    tech:   ['HTML&CSS', 'JavaScript', 'Flask API',  'PostgreSQL', 'Socket.io', '2FA'],
     link:   '',
     github: 'https://github.com/Andry-GitCrs/Task_Manager',
   },
   {
-    id:       'realworld',
-    name:     'Realworld API',
-    role:     'Développeur Backend',
-    type:     'Équipe',
-    status:   'wip',
-    emoji:    '🏭',
-    summary:  "API REST de gestion de stock pour entreprise privée. Architecture NestJS avec CRUD complet et sécurité avancée.",
-    details: [
-      "Création et gestion des opérations CRUD",
-      "Système d'authentification JWT",
-      "Service d'envoi d'emails OTP pour validation",
-      "Coordination équipe via Git, GitHub et Trello",
-    ],
-    images: [],
-    tech:   ['NestJS', 'TypeScript', 'PostgreSQL', 'JWT', 'Trello'],
-    link:   '',
-    github: '',
-  },
-  {
-    id:       'music-app',
-    name:     'Music Web App',
+    id:       'file-explorer',
+    name:     'Explorateur de fichiers (Open-Source)',
     role:     'Développeur Frontend',
     type:     'Individuel',
-    status:   'done',
-    emoji:    '🎵',
-    summary:  "Clone frontend d'un lecteur de musique inspiré de Spotify. Interface responsive, playlist et lecteur audio custom.",
+    status:   'open-source',
+    emoji:    '✅',
+    summary:  "Une explorateur de fichiers web.",
     details: [
-      "Interface utilisateur responsive inspirée de Spotify",
-      "Lecteur audio personnalisé avec contrôles playback",
-      "Gestion de playlists dynamiques",
+      "Interface d'exploration de fichiers avec gestion de fichiers et dossiers",
+      "Création et suppression de fichiers et dossiers",
     ],
     images: [],
-    tech:   ['JavaScript', 'HTML', 'CSS', 'Web Audio API'],
-    link:   '',   // REVIEW: ajouter lien
-    github: '',   // REVIEW: ajouter lien GitHub
-  },
-  {
-    id:       'ecommerce',
-    name:     'E-commerce Animaux',
-    role:     'Développeur Full-Stack',
-    type:     'Individuel',
-    status:   'done',
-    emoji:    '🐾',
-    summary:  "Site e-commerce dédié aux animaux de compagnie. Catalogue produits, panier et gestion admin des commandes.",
-    details: [
-      "Catalogue produits avec filtres et recherche",
-      "Système de panier et processus de commande",
-      "Interface admin de gestion des commandes",
-    ],
-    images: [],
-    tech:   ['PHP', 'JavaScript', 'HTML/CSS', 'MySQL'],
-    link:   '',   // REVIEW: ajouter lien
-    github: '',   // REVIEW: ajouter lien GitHub
-  },
-  {
-    id:       'school-id',
-    name:     'School ID Card',
-    role:     'Développeur Full-Stack',
-    type:     'Individuel',
-    status:   'done',
-    emoji:    '🪪',
-    summary:  "Application simplifiant la création de cartes d'identité scolaires. Formulaire de saisie et génération automatique.",
-    details: [
-      "Formulaire de saisie des informations élèves",
-      "Génération automatique de la carte d'identité",
-      "Export et impression des cartes",
-    ],
-    images: [],
-    tech:   ['PHP', 'HTML', 'CSS'],
-    link:   '',   // REVIEW: ajouter lien
-    github: '',   // REVIEW: ajouter lien GitHub
-  },
+    tech:   ['HTML&CSS', 'JavaScript', 'PHP Native', 'Git&GitHub'],
+    link:   'https://github.com/Andry-GitCrs/File_explorer_php.git',
+    github: 'https://github.com/Andry-GitCrs/File_explorer_php.git',
+  }
 ];
 
-export const SKILLS = {
-  backend: [
-    { name: 'NestJS / TypeScript', level: 80 },
-    { name: 'Flask (Python)',      level: 82 },
-    { name: 'Node.js / Express',   level: 75 },
-    { name: 'PHP',                 level: 65 },
-    { name: 'Django (bases)',      level: 40 },
-  ],
-  frontend: [
-    { name: 'JavaScript (Vanilla)', level: 85 },
-    { name: 'Next.js / React',      level: 80 },
-    { name: 'Tailwind CSS',         level: 88 },
-    { name: 'HTML / CSS',           level: 90 },
-    { name: 'React Native',         level: 50 },
-  ],
-  databases: [
-    { name: 'PostgreSQL', level: 82 },
-    { name: 'MySQL / MariaDB', level: 70 },
-    { name: 'SQL (général)', level: 80 },
-  ],
-  devops: [
-    { name: 'Git & GitHub',        level: 85 },
-    { name: 'Linux',               level: 75 },
-    { name: 'Docker',              level: 60 },
-    { name: 'PM2 / Apache',        level: 65 },
-  ],
-  languages: [
-    { name: 'JavaScript', icon: '🟨', level: 'Avancé' },
-    { name: 'TypeScript', icon: '🔷', level: 'Avancé' },
-    { name: 'Python',     icon: '🐍', level: 'Avancé' },
-    { name: 'PHP',        icon: '🐘', level: 'Intermédiaire' },
-    { name: 'Java',       icon: '☕', level: 'Intermédiaire' },
-    { name: 'C / C++',    icon: '⚙️',  level: 'Intermédiaire' },
-    { name: 'Bash',       icon: '🐚', level: 'Bases' },
-    { name: 'SQL',        icon: '🗃️',  level: 'Avancé' },
-  ],
-  tools: ['PM2', 'Docker', 'Git', 'pgAdmin 4', 'Sequelize', 'WAMP', 'VirtualBox', 'Trello', 'LucidChart', 'Figma (bases)', 'Canva', 'UFW', 'Certbot', 'NameCheap'],
-};
+export const STATS = [
+  { value: `+${PROJECTS.length}`, label: 'Projets' },
+  { value: '+10', label: 'Langages' },
+  { value: '2', label: 'Ans d\'étude' },
+  { value: `+${PROJECTS.filter(p => p.status === 'deployed').length}`, label: 'Déploiements' },
+];
+
 
 export const EXPERIENCE = [
   {
-    title:   'Développeur Backend',
+    title:   'Développeur Full-Stack',
     project: 'Realworld',
-    type:    'Équipe · En cours',
+    type:    'Équipe',
     period:  '2025 — présent',
     wip:     true,
-    summary: "API REST de gestion de stock pour entreprise privée avec NestJS.",
+    summary: "Application de gestion de stock complete pour entreprise privée. Architecture Clean et sécurité avancée.",
     tasks: [
       "Domain Driven Design",
       "Création d'une Api REST",
       "Implementation de la logique de gestion de stock",
-      "Système d'authentification JWT",
+      "Système d'authentification JWT et gestion des droits d'accès",
       "Service d'envoi d'emails OTP",
       "Collaboration via Git, GitHub et Trello",
       "Déploiement sur un VPS",
     ],
-    tech: ['NestJS', 'Next.js', 'PostgreSQL', 'Git & GitHub', 'CI/CD avec GitHub Actions', 'Trello'],
+    tech: ['NestJS', 'Next.js', 'PostgreSQL', 'CI/CD avec GitHub Actions', 'VPS', 'Trello'],
     link: '',
   },
   {
@@ -206,7 +238,7 @@ export const EXPERIENCE = [
     project: 'My Roadmap',
     type:    'Individuel',
     period:  '2026',
-    wip:     false,
+    wip:     true,
     summary: "Plateforme de conception de parcours personnels ou professionnels sur plusieurs domaines, en temps réel et avec suivi de progression (Rappel Whatsapp). Avec un système de planification et gestion de tâches. Partage de resources et collaboration.",
     tasks: [
       "UI & UX intuitive et moderne",
@@ -217,7 +249,7 @@ export const EXPERIENCE = [
       "Service d'envoi d'emails OTP",
       "Déploiement sur VPS",
     ],
-    tech: ['Next.js', 'Sqlite', 'PostgreSQL', 'Git&GitHub', 'CI/CD avec Git Actions'],
+    tech: ['Next.js', 'Sqlite', 'PostgreSQL', 'CI/CD avec Git Actions'],
     link: 'https://roadmap.andry.ink',
   },
   {
@@ -253,6 +285,77 @@ export const EXPERIENCE = [
     link: 'https://github.com/Andry-GitCrs/Task_Manager',
   },
 ];
+
+export const SKILLS = {
+  backend: [
+    { name: 'NestJS / TypeScript', level: 80 },
+    { name: 'Flask (Python)',      level: 82 },
+    { name: 'Node.js / Express',   level: 75 },
+    { name: 'PHP',                 level: 65 },
+    { name: 'Django (bases)',      level: 40 },
+  ],
+  frontend: [
+    { name: 'JavaScript (Vanilla)', level: 85 },
+    { name: 'Next.js / React',      level: 80 },
+    { name: 'Tailwind CSS',         level: 88 },
+    { name: 'HTML / CSS',           level: 90 },
+    { name: 'React Native',         level: 50 },
+  ],
+  databases: [
+    { name: 'PostgreSQL', level: 82 },
+    { name: 'MySQL / MariaDB', level: 70 },
+    { name: 'SQL (général)', level: 80 },
+  ],
+  devops: [
+    { name: 'Git & GitHub',        level: 85 },
+    { name: 'Linux',               level: 75 },
+    { name: 'Docker',              level: 60 },
+    { name: 'PM2 / Apache',        level: 65 },
+  ],
+  languages: [
+      {
+        name: 'JavaScript',
+        level: 'Avancé',
+        icon: `<svg viewBox="0 0 24 24" fill="#F7DF1E"><rect width="24" height="24" rx="2" fill="#F7DF1E"/><path d="M7 17.5c.4.7.9 1.2 1.9 1.2 1 0 1.6-.5 1.6-1.2 0-.8-.6-1.1-1.7-1.6l-.6-.2c-1.6-.7-2.7-1.6-2.7-3.4 0-1.7 1.3-3 3.3-3 1.4 0 2.4.5 3.2 1.8l-1.7 1.1c-.4-.7-.8-1-1.5-1-.7 0-1.1.4-1.1 1 0 .7.4 1 1.5 1.4l.6.3c1.9.8 3 1.7 3 3.5 0 2-1.6 3.2-3.7 3.2-2.1 0-3.4-1-4-2.4L7 17.5zm8.5.2c.5.8 1 1.4 2.1 1.4 1 0 1.6-.5 1.6-1.1V11h2.1v7.1c0 2.2-1.3 3.2-3.2 3.2-1.7 0-2.7-.9-3.2-1.9l1.6-1.2z" fill="#000"/></svg>`,
+      },
+      {
+        name: 'TypeScript',
+        level: 'Avancé',
+        icon: `<svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="2" fill="#3178C6"/><path d="M13.2 13.4H15v-.7c0-1.7-1-2.7-2.9-2.7-1.8 0-3 1-3 2.5 0 1.3.8 2 2.2 2.6l.6.2c.9.4 1.3.7 1.3 1.3 0 .6-.5 1-1.3 1-.9 0-1.4-.5-1.5-1.3H8.6c.1 1.7 1.2 2.7 3.2 2.7 2 0 3.2-1 3.2-2.6 0-1.4-.8-2.1-2.3-2.7l-.6-.3c-.8-.3-1.2-.6-1.2-1.1 0-.5.4-.9 1.1-.9.7 0 1.1.4 1.2 1zm2.3-2.1V10H10v1.3h1.9V19h1.8v-7.7h1.8z" fill="#fff"/></svg>`,
+      },
+      {
+        name: 'Python',
+        level: 'Avancé',
+        icon: `<svg viewBox="0 0 24 24"><path d="M11.9 2C7.4 2 7.7 3.9 7.7 3.9v2h4.3v.6H5.5S2 6.1 2 10.7s3 4.4 3 4.4h1.8v-2.1s-.1-3 3-3h5.1s2.9.1 2.9-2.8V5.7S18.3 2 11.9 2zm-1.7 1.6c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9z" fill="#366A96"/><path d="M12.1 22c4.5 0 4.2-1.9 4.2-1.9v-2h-4.3v-.6h6.5S22 17.9 22 13.3s-3-4.4-3-4.4h-1.8v2.1s.1 3-3 3H9.1S6.2 14 6.2 16.9v3.4S5.7 22 12.1 22zm1.7-1.6c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9z" fill="#FFC331"/></svg>`,
+      },
+      {
+        name: 'PHP',
+        level: 'Intermédiaire',
+        icon: `<svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="11" ry="7" fill="#777BB3"/><path d="M7.3 9.5H9l-.3 1.5h1.2c.8 0 1.3.1 1.6.4.3.3.4.7.2 1.4l-.4 2.2H9.5l.4-2c.1-.4.1-.7 0-.8-.1-.2-.3-.2-.7-.2H8.1l-.5 3H6l1.3-5.5zm5.4 0H15l-.3 1.5h1.2c.8 0 1.3.1 1.6.4.3.3.4.7.2 1.4l-.4 2.2H16l.4-2c.1-.4.1-.7 0-.8-.1-.2-.3-.2-.7-.2h-1.1l-.5 3h-1.8l1.4-5.5z" fill="#fff"/></svg>`,
+      },
+      {
+        name: 'Java',
+        level: 'Intermédiaire',
+        icon: `<svg viewBox="0 0 24 24"><path d="M9.4 16.6s-.6.4.5.5c1.2.1 1.9.1 3.3-.2 0 0 .4.2.9.4-3 1.3-6.9-.1-4.7-.7zm-.4-1.7s-.7.5.4.6c1.4.1 2.5.2 4.5-.2 0 0 .3.3.7.4-4 1.2-8.4.1-5.6-.8z" fill="#EA2D2E"/><path d="M12.4 11.6c.8.9-.2 1.8-.2 1.8s2.1-1.1 1.1-2.4c-.9-1.2-1.6-1.9 2.2-4 0 0-6 1.5-3.1 4.6z" fill="#EA2D2E"/><path d="M16.5 18.1s.5.4-.5.7c-1.8.5-7.4.7-9 0-.6-.2.5-.6.8-.6.3 0 .5 0 .5 0-.6-.4-3.9 1-1.7 1.3 6 1 10.9-.4 9.9-1.4zm-7.1-5.2s-2.7.7-1 .9c.7.1 2.2.1 3.5-.1 1.1-.1 2.2-.4 2.2-.4s-.4.2-.7.3c-2.8.7-8.2.4-6.6-.3 1.3-.6 2.6-.4 2.6-.4zm4.7 2.7c2.8-1.5 1.5-2.9.6-2.7-.2 0-.3.1-.3.1s.1-.2.3-.2c2-1 3.6 2.1-.6 3.1 0 0 .1-.1 0-.3z" fill="#EA2D2E"/><path d="M13.2 4S15 6 11.4 8.9c-2.9 2.3-.7 3.6 0 5.1-1.7-1.5-2.9-2.9-2.1-4.1C10.5 8.1 14 7.2 13.2 4z" fill="#EA2D2E"/><path d="M9.7 21c2.7.2 6.8-.1 6.9-1.2 0 0-.2.5-2.2.8-2.3.4-5.1.3-6.8 0 0 0 .3.3 2.1.4z" fill="#EA2D2E"/></svg>`,
+      },
+      {
+        name: 'C / C++',
+        level: 'Intermédiaire',
+        icon: `<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z" fill="#00599C"/><path d="M9.5 15.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5c1 0 1.9.4 2.5 1.1l-1.1 1.1c-.4-.4-.9-.6-1.4-.6-1.1 0-2 .9-2 2s.9 2 2 2c.6 0 1.1-.2 1.4-.6L12 14.4c-.7.7-1.6 1.1-2.5 1.1zm4.5-3h-1v1h-1v-1h-1v-1h1v-1h1v1h1v1zm3 0h-1v1h-1v-1h-1v-1h1v-1h1v1h1v1z" fill="#fff"/></svg>`,
+      },
+      {
+        name: 'Bash',
+        level: 'Bases',
+        icon: `<svg viewBox="0 0 24 24"><rect width="24" height="24" rx="3" fill="#1D1D1D"/><path d="M5 7l4 5-4 5M11 17h8" stroke="#4AF626" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>`,
+      },
+      {
+        name: 'SQL',
+        level: 'Avancé',
+        icon: `<svg viewBox="0 0 24 24"><rect width="24" height="24" rx="3" fill="#336791"/><ellipse cx="12" cy="8" rx="6" ry="2.5" fill="#fff" fillOpacity=".9"/><path d="M6 8v3c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V8" fill="none" stroke="#fff" strokeOpacity=".9" strokeWidth="1.2"/><path d="M6 11v3c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-3" fill="none" stroke="#fff" strokeOpacity=".9" strokeWidth="1.2"/></svg>`,
+      },
+    ],
+  tools: ['PM2', 'Docker', 'Git', 'pgAdmin 4', 'Sequelize', 'WAMP', 'VirtualBox', 'Trello', 'LucidChart', 'Figma (bases)', 'Canva', 'UFW', 'Certbot', 'NameCheap'],
+};
 
 export const EDUCATION = [
   {

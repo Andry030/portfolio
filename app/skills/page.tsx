@@ -9,10 +9,30 @@ import { SKILLS } from '@/lib/data';
 export const metadata: Metadata = { title: 'Compétences' };
 
 const CATEGORIES = [
-  { key: 'backend',   title: 'Backend & API',   icon: '⚡', data: SKILLS.backend },
-  { key: 'frontend',  title: 'Frontend',        icon: '🎨', data: SKILLS.frontend },
-  { key: 'databases', title: 'Bases de données', icon: '🗄️', data: SKILLS.databases },
-  { key: 'devops',    title: 'DevOps & Outils', icon: '🚀', data: SKILLS.devops },
+  {
+    key: 'backend',
+    title: 'Backend & API',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="5" rx="1"/><rect x="2" y="10" width="20" height="5" rx="1"/><rect x="2" y="17" width="20" height="5" rx="1"/><circle cx="6" cy="5.5" r=".8" fill="currentColor"/><circle cx="6" cy="12.5" r=".8" fill="currentColor"/><circle cx="6" cy="19.5" r=".8" fill="currentColor"/></svg>`,
+    data: SKILLS.backend,
+  },
+  {
+    key: 'frontend',
+    title: 'Frontend',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+    data: SKILLS.frontend,
+  },
+  {
+    key: 'databases',
+    title: 'Bases de données',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v5c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 10v5c0 1.7 4 3 9 3s9-1.3 9-3v-5"/></svg>`,
+    data: SKILLS.databases,
+  },
+  {
+    key: 'devops',
+    title: 'DevOps & Outils',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+    data: SKILLS.devops,
+  },
 ];
 
 export default function SkillsPage() {
@@ -35,7 +55,11 @@ export default function SkillsPage() {
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xl"
                      style={{ background: 'var(--accent-sub)' }}>
-                  {cat.icon}
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center"
+                    style={{ background: 'var(--accent-sub)' }}
+                    dangerouslySetInnerHTML={{ __html: cat.icon }}
+                  />
                 </div>
                 <h2 className="font-display text-xl font-semibold">{cat.title}</h2>
               </div>
@@ -54,7 +78,12 @@ export default function SkillsPage() {
           <div className="flex flex-wrap gap-3">
             {SKILLS.languages.map(l => (
               <div key={l.name} className="flex flex-col items-center gap-1 px-5 py-3 rounded-xl border border-[var(--border)] min-w-[90px] text-center">
-                <span className="text-2xl">{l.icon}</span>
+                <span className="text-2xl">
+                  <div
+                    className="w-8 h-8"
+                    dangerouslySetInnerHTML={{ __html: l.icon }}
+                  />
+                </span>
                 <span className="text-sm font-semibold">{l.name}</span>
                 <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{l.level}</span>
               </div>

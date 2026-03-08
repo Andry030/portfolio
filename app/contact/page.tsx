@@ -46,34 +46,42 @@ export default function ContactPage() {
 
           {/* Left info */}
           <div className="lg:col-span-2 space-y-5">
-            <Reveal className="card">
-              <span className="badge-open mb-4 inline-flex"><span className="badge-dot" />Disponible</span>
-              <h3 className="font-display text-lg font-semibold mb-2">Cherche un stage</h3>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                Étudiant en 2ᵉ année, je cherche une opportunité de stage en développement web.
-              </p>
-            </Reveal>
-
             <Reveal delay={1} className="card space-y-4">
               <h3 className="font-display text-lg font-semibold">Coordonnées</h3>
 
               {[
-                { icon: '✉', label: 'Email', value: PERSON.email, href: `mailto:${PERSON.email}` },
-                { icon: '📞', label: 'Tél.', value: PERSON.phone[0], href: `tel:${PERSON.phone[0].replace(/\s/g,'')}` },
-                { icon: '📍', label: 'Lieu', value: PERSON.location, href: undefined },
-                { icon: '🐙', label: 'GitHub', value: 'Andry-GitCrs', href: PERSON.github },
+                {
+                  icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>`,
+                  label: 'Email', value: PERSON.email, href: `mailto:${PERSON.email}`
+                },
+                {
+                  icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>`,
+                  label: 'Tél.', value: PERSON.phone[0], href: `tel:${PERSON.phone[0].replace(/\s/g,'')}`
+                },
+                {
+                  icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>`,
+                  label: 'Lieu', value: PERSON.location, href: undefined
+                },
+                {
+                  icon: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.4 2.9 8.2 6.8 9.5.5.1.7-.2.7-.5v-1.7C6.7 19.9 6.1 18 6.1 18c-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.8.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.8-2.3 4.7-4.6 4.9.4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0 0 22 12 10 10 0 0 0 12 2z"/></svg>`,
+                  label: 'GitHub', value: 'Andry030', href: PERSON.github
+                },
               ].map(c => (
                 <div key={c.label} className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-lg flex items-center justify-center text-sm shrink-0"
-                       style={{ background: 'var(--accent-sub)' }}>
-                    {c.icon}
-                  </div>
+                  <div
+                    className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+                    style={{ background: 'var(--accent-sub)' }}
+                    dangerouslySetInnerHTML={{ __html: c.icon }}
+                  />
                   <div>
-                    <p className="text-xs font-medium uppercase tracking-wide mb-0.5" style={{ color: 'var(--text-muted)' }}>{c.label}</p>
+                    <p className="text-xs font-medium uppercase tracking-wide mb-0.5" style={{ color: 'var(--text-muted)' }}>
+                      {c.label}
+                    </p>
                     {c.href ? (
-                      <a href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined}
-                         rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                         className="text-sm transition-colors hover:text-[var(--accent)]">
+                      <a href={c.href}
+                        target={c.href.startsWith('http') ? '_blank' : undefined}
+                        rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className="text-sm transition-colors hover:text-[var(--accent)]">
                         {c.value}
                       </a>
                     ) : (
@@ -148,11 +156,7 @@ export default function ContactPage() {
                   style={{ fontSize: '0.95rem', padding: '0.9rem' }}
                 >
                   {status === 'loading' ? 'Envoi en cours…' : 'Envoyer le message'}
-                  {status !== 'loading' && (
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
-                    </svg>
-                  )}
+                  {status !== 'loading' && ''}
                 </button>
 
                 <p className="text-center text-xs mt-3" style={{ color: 'var(--text-muted)' }}>

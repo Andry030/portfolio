@@ -118,6 +118,13 @@ body {
   font-weight: 500;
 }
 
+.tag-muted svg {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+  flex-shrink: 0;
+}
+
 /* ── Badge ── */
 .badge-open {
   display: inline-flex;

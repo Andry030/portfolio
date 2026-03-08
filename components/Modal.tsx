@@ -128,13 +128,10 @@ export default function Modal({
           ) : (
             /* Placeholder quand pas d'images */
             <div className="w-full h-full flex flex-col items-center justify-center gap-3"
-                 style={{ background: 'var(--accent-sub)' }}>
-              <span className="text-6xl">{project.emoji}</span>
+              style={{ background: 'var(--accent-sub)' }}
+            >
               <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
                 Aucune capture disponible
-              </p>
-              <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
-                Ajoutez des images dans <code className="px-1 py-0.5 rounded" style={{ background: 'var(--border)' }}>public/images/projects/{project.id}/</code>
               </p>
             </div>
           )}
