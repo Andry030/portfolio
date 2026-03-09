@@ -87,9 +87,12 @@ export default function HomePage() {
 
                 {/* Name — Cormorant display */}
                 <Reveal delay={1}>
-                <h1 className="font-display leading-[0.95] tracking-tight mb-4"
-                    style={{ fontSize: 'clamp(2rem,6vw,4.5rem)', fontWeight: 600 }}>
-                  ANDRIANAIVO
+                  <span>
+                    <span className="block" style={{ color: 'var(--accent)' }}>Bonjour, je suis</span>
+                  </span>
+                  <h1 className="font-display leading-[0.95] tracking-tight mb-4"
+                      style={{ fontSize: 'clamp(2rem,6vw,4.5rem)', fontWeight: 600 }}>
+                    ANDRIANAIVO
                   <span className="block" style={{ color: 'var(--accent)' }}>Noé</span>
                 </h1>
               </Reveal>
@@ -180,7 +183,7 @@ export default function HomePage() {
                           color: 'var(--accent)',
                         }}>
                       <Image
-                        src="/avatar1.jpg"
+                        src="/avatar.jpg"
                         alt="ANDRIANAIVO Noé"
                         fill
                         className="object-cover rounded-full"

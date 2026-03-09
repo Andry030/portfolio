@@ -59,7 +59,7 @@ export default function ProjectCard({ project, index, onOpen }: { project: Proje
         ) : (
           /* No image placeholder */
           <div className="w-full h-full flex flex-col items-center justify-center gap-2">
-            <span className="text-xs" style={{ color: 'var(--text-muted)' }}>404 Not Found</span>
+            <span className="text-xs" style={{ color: 'var(--text-muted)' }}>Pas de captures disponibles</span>
           </div>
         )}
       </button>
