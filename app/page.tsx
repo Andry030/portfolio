@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     images:      ['/images/og-image.png'],
   },
   robots: { index: true, follow: true },
+  icons: { icon: '/avatar.png' },
 };
 
 
